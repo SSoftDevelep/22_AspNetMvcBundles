@@ -1,0 +1,37 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/css/all");
+    @Scripts.Render("~/js/all");
+
+</head>
+<body>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    <script type="text/javascript">
+
+            if (typeof jQuery == 'undefined') { //undefined yuklenmemisse demektir.
+                var e = document.createElement('script');
+                e.src = '@Url.Content("~/Scripts/jquery-2.2.4.js")';
+                e.type = 'text/javascript';
+
+                document.getElementsByTagName("head")[0].appendChild(e);
+
+            }
+    </script>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
